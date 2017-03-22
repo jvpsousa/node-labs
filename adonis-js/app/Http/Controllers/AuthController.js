@@ -42,7 +42,7 @@ class AuthController {
     try {
       yield request.auth.attempt(email, password)
       response.redirect('/')
-    }catch (e) {
+    } catch (e) {
       yield request.with({ error: 'Invalid credentials' }).flash()
       response.redirect('back')
     }
